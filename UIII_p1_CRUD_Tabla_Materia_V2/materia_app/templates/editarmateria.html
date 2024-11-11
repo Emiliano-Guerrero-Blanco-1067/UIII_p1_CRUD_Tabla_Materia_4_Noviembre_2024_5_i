@@ -1,0 +1,27 @@
+{$extends "base.html"$}
+
+{% block cuerpo %}
+    <div class="row">
+        <div class="col-md-4 offset-md">
+            <h2> </h2>
+            <div class="card"> <!-- la tarjeta -->
+                <div class="card-body">
+                  <form action="/editarmateria/" method="POST"> {% csrf_token %}<!-- falta action -->
+                    <div class="form-group">
+                      <input type="text" id="txtcodigo" name="txtcodigo" value="{{mismaterias.codigo}}" class "form-control" minlength="1" maxlength="6" readonly required>
+                    </div>
+                    <div class="form-group py-3">
+                      <input type="text" id="txtnombre" name="txtnombre" value="{{mismaterias.codigo}}" class "form-control" maxlength="100" required>
+                    </div>
+                    <div class="form-group py-2">
+                      <input type="text" id="numcreditos" name="numcreditos" min="1" max="9 "  class "form-control" value="{{mismaterias.codigo}}" required>
+                    </div>
+                    <div class="form-group py-2">
+                      <button type="submit" class="btn btn-primary">Guardar</button>
+                    </div>
+                  </form>
+                </div>
+              </div> <!-- la tarjeta -->
+        </div>
+    </div>
+{% endblock %}
